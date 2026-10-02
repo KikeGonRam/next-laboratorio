@@ -1,10 +1,10 @@
-import path from "path/win32";
+import Link from "next/link";
 
 function Header() {
   return (
 
 <header className="flex w-full flex-wrap items-center justify-between gap-x-6 gap-y-4 border-b border-zinc-200 pb-5 dark:border-zinc-800">
-            <a
+            <Link
                 href="/"
                 className="group flex items-center gap-2 text-lg font-semibold tracking-tight text-zinc-900 dark:text-white"
                 aria-label="UTVT, inicio"
@@ -35,27 +35,25 @@ function Header() {
                     />
                 </svg>
                 <span>UTVT</span>
-            </a>
+            </Link>
 
             <nav aria-label="Navegacion principal" className="order-3 w-full sm:order-0 sm:w-auto">
                 <ul className="flex items-center gap-5 overflow-x-auto text-sm font-medium text-zinc-600 dark:text-zinc-400">
                     <li>
-                        <a>
+                        <Link href="/">
                             Mi carrera
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a
-                            href="/about" >
+                        <Link href="/about">
                             Acerca de
-                        </a>
+                        </Link>
                     </li>
 
                     <li>
-                        <a
-                            href="/blog">
+                        <Link href="/blog">
                             Blog
-                        </a>
+                        </Link>
                     </li>
 
                     <li><a className="whitespace-nowrap transition-colors hover:text-cyan-600 dark:hover:text-cyan-400" href="https://nextjs.org/docs/app/getting-started/project-structure">Next.js</a></li>

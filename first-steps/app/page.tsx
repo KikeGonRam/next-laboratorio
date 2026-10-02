@@ -15,9 +15,12 @@ export default function Home() {
           </p>
         </section>
         <div className="overflow-hidden rounded-lg bg-emerald-950 shadow-xl shadow-emerald-950/15">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85"
             alt="Circuito electrónico que representa la innovación tecnológica"
+            width={1200}
+            height={900}
+            preload
             className="aspect-4/3 w-full object-cover"
           />
         </div>
