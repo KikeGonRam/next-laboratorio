@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const learningAreas = [
     "Desarrollo de software",
     "Datos e inteligencia artificial",
@@ -22,25 +20,6 @@ function AboutPage() {
   return (
         <main className="min-h-screen overflow-hidden bg-[#f5f7f3] text-[#123044]">
             <div className="mx-auto max-w-7xl px-6 lg:px-10">
-                <header className="flex items-center justify-between border-b border-[#123044]/15 py-5">
-                    <Link href="/" className="flex items-center gap-3 font-semibold tracking-tight">
-                        <span className="grid h-10 w-10 place-items-center rounded-md bg-[#123044] text-[#d9ef3c]">
-                            <CircuitMark />
-                        </span>
-                        <span className="leading-tight">
-                            <span className="block text-sm">UTVT</span>
-                            <span className="block text-xs font-medium text-[#123044]/60">Tecnología que transforma</span>
-                        </span>
-                    </Link>
-                    <a
-                        href="https://utvt.edomex.gob.mx/"
-                        className="inline-flex items-center gap-2 border-b-2 border-[#d9ef3c] pb-1 text-sm font-semibold transition-colors hover:text-[#177e89]"
-                    >
-                        Sitio institucional
-                        <span aria-hidden="true">↗</span>
-                    </a>
-                </header>
-
                 <section className="grid gap-12 py-16 lg:grid-cols-[1.15fr_.85fr] lg:py-24">
                     <div className="max-w-3xl">
                         <p className="mb-6 text-sm font-bold uppercase tracking-[0.18em] text-[#177e89]">
