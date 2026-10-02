@@ -1,29 +1,7 @@
-
-import Link from "next/link";
-
-const blogSections = [
-    {
-        href: "/blog/actualidad-tecnologica",
-        label: "Actualidad tecnológica",
-        description: "Tendencias, herramientas y proyectos que están transformando el entorno digital.",
-        number: "01",
-    },
-    {
-        href: "/blog/areas-de-formacion",
-        label: "Áreas de formación",
-        description: "Desarrollo de software, redes, datos, ciberseguridad e innovación aplicada.",
-        number: "02",
-    },
-    {
-        href: "/blog/historias-que-inspiran",
-        label: "Historias que inspiran",
-        description: "Experiencias y publicaciones destacadas de nuestra comunidad académica.",
-        number: "03",
-    },
-];
+import ListItem from "../components/utils/ListItem";
+import { blogSections } from "../data/blog-sections";
 
 function BlogPage() {
-
     return (
         <main className="min-h-[calc(100vh-81px)] bg-zinc-50 px-6 py-12 text-zinc-900 sm:px-10 lg:px-16 lg:py-20">
             <div className="mx-auto max-w-6xl">
@@ -45,21 +23,7 @@ function BlogPage() {
                         <span className="hidden text-sm font-medium text-zinc-500 sm:block">Aprende. Crea. Innova.</span>
                     </div>
                     <ul className="grid gap-4 md:grid-cols-3">
-                        {blogSections.map((section) => (
-                            <li key={section.href}>
-                                <Link
-                                    href={section.href}
-                                    className="group flex h-full min-h-56 flex-col justify-between rounded-lg border border-zinc-200 bg-white p-6 transition duration-200 hover:-translate-y-1 hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-950/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-600"
-                                >
-                                    <span className="text-sm font-bold tracking-[0.14em] text-cyan-700">{section.number}</span>
-                                    <div>
-                                        <h3 className="mb-3 text-xl font-bold text-emerald-950 transition-colors group-hover:text-emerald-700">{section.label}</h3>
-                                        <p className="text-sm leading-6 text-zinc-600">{section.description}</p>
-                                    </div>
-                                    <span className="mt-6 text-sm font-semibold text-emerald-700">Ver publicaciones <span aria-hidden="true">&rarr;</span></span>
-                                </Link>
-                            </li>
-                        ))}
+                        {blogSections.map((section) => (<ListItem key={section.href} {...section} />))}
                     </ul>
                 </section>
             </div>
@@ -68,4 +32,3 @@ function BlogPage() {
 }
 
 export default BlogPage;
-
