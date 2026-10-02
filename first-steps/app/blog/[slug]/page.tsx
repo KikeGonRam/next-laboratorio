@@ -1,17 +1,20 @@
-import { notFound } from "next/navigation";
-import BlogPostCard from "../../components/utils/BlogPostCard";
-import { blogPosts } from "../../data/blog-posts";
+import BlogPostContent from "@/app/components/utils/BlogPostContent";
+import { blogPosts } from "@/app/data/blog-posts";
+import { BlogPostPageProps } from "@/app/types/blog";
 
-async function BlogPostPage({ params }: PageProps<"/blog/[slug]">) {
+async function BlogPostPage({ params }: BlogPostPageProps) {
 
     const { slug } = await params;
-    const post = blogPosts[slug];
 
-    if (!post) {
-        notFound();
-    }
+    const post = blogPosts[slug] ?? {
+        title: slug.replace(/-/g, " "),
+        paragraphs: [
+            "Este espacio reúne ideas, experiencias y recursos relacionados con la tecnología y la innovación digital.",
+            "Te invitamos a seguir explorando los contenidos de nuestro blog para descubrir nuevas perspectivas.",
+        ],
+    };
 
-    return <BlogPostCard {...post} />;
+    return <BlogPostContent post={post} />;
 }
 
 export default BlogPostPage;
